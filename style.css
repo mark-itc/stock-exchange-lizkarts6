@@ -1,43 +1,72 @@
 body {
-    font-family: 'Raleway', sans-serif;
-    background-color: #F0E9E3;
+  font-family: "Raleway", sans-serif;
+  background-color: #f0e9e3;
 }
 
 .navbar {
-    margin-top: 5vh;
+  margin-top: 5vh;
+  padding-bottom: 3vh;
 }
 
 .search-form {
-    margin-left: 40vw;
+  margin-left: 42vw;
 }
 
 .list-of-results {
-    list-style-type: none;
-    border-bottom: 1px solid gray;
-    padding: 15px;
-    
+  margin: auto;
+  align-items: center;
+  list-style-type: none;
+  width: fit-content;
+  border-bottom: 1px solid gray;
+  padding: 15px;
 }
 
 .searched-container {
-    margin-left: 32vw;
-    width: fit-content;
-    text-align: center;
+  text-align: center;
 }
 
 .spinner-border {
-    margin-left: 47vw;
-    margin-top: 5vh;
+  margin-left: 47vw;
+  margin-top: 5vh;
 }
 
 .form-control {
-    background-color: #f2f2f2;
+  background-color: #f2f2f2;
 }
 a {
-    text-decoration: none;
-    color: #617658;
+  text-decoration: none;
+  color: #617658;
 }
 
 a:hover {
-    color: #2D3629;
-    font-weight: bolder;
+  color: #2d3629;
+  font-weight: bolder;
 }
+
+.companyInfoContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  justify-content: space-around;
+  text-align: center;
+  margin: 100px;
+  height: 100vh;
+}
+.company-image {
+  grid-area: 1 / 1 / 2 / 2;
+}
+.name-and-link {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.charts {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.description {
+  grid-area: 1 / 2 / 4 / 3;
+  line-height: 35px;
+  width: fit-content;
+  height: fit-content;
+  border: 3px ridge #617658;
+  padding: 10px;
+}
+
