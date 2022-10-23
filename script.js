@@ -13,16 +13,7 @@ function searchData(e) {
       "&limit=10&exchange=NASDAQ"
   );
 }
-// let urlParams = new URLSearchParams(window.location.search);
-// const symbol = urlParams.get("symbol");
 
-// async function getImgAndPrice (){
-//   const response = await fetch (`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${symbol}`)
-//   const result = await response.json()
-//   console.log(result);
-// }
-
-// getImgAndPrice()
 async function getSearchData(url) {
   loadingSpinner.classList.remove("d-none");
   searchedList.innerHTML = "";
@@ -35,16 +26,35 @@ async function getSearchData(url) {
       let name = result[i].name;
       let newLi = document.createElement("li");
       newLi.classList.add("list-of-results");
+      let companyInfo = await getCompanyDetails(symbol);
+
       newLi.innerHTML =
+        '<img src=" ' +
+        companyInfo.profile.image +
+        '" width="20" height="20">' +
         ' <a target="_blank" href=/company.html?symbol=' +
         symbol +
         ">" +
         name +
-        "(" +
+        "</a> <span style='font-size: 13px'>(" +
         symbol +
-        ")</a> ";
+        ") </span> <span style='font-size: 10px; color: green'>" +
+        companyInfo.profile.changesPercentage +
+        "</span>"
       searchedList.appendChild(newLi);
     }
+  } catch (err) {
+    throw new Error("error", err);
+  }
+}
+
+async function getCompanyDetails(symbol) {
+  const url = `https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${symbol}`;
+  try {
+    const response = await fetch(url);
+    const result = await response.json();
+
+    return result;
   } catch (err) {
     throw new Error("error", err);
   }
