@@ -71,31 +71,36 @@ a:hover {
 
 
 .marquee {
-  height: 25px;
-  width: 420px;
-
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-}
-
-.marquee div {
-  display: block;
-  width: 200%;
+  border-bottom: 2px solid gray;
+  border-top: 2px solid gray;
+  color: limegreen;
   height: 30px;
-
-  position: fixed;
+  
   overflow: hidden;
-
-  animation: marquee 10s linear infinite;
 }
 
-.marquee span {
-  float: left;
-  width: 50%;
+.marqDisplay {
+  display: flex;
+}
+
+.dataStyle {
+  flex-shrink: 0;
+  width: 10%;
+  box-sizing: border-box;
+  text-align: center;
 }
 
 @keyframes marquee {
-  0% { left: 0; }
-  100% { left: -100%; }
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(-400%, 0, 0);
+  }
 }
+.marqDisplay {
+  animation: marquee linear 30s infinite;
+}
+.marqDisplay:hover {
+  animation-play-state: paused;
+}  

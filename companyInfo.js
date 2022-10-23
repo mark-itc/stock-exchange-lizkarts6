@@ -23,7 +23,7 @@ async function getSearchData(url) {
     document.getElementById("compImage").innerHTML =
       '<img src="' + photo + '">';
     document.getElementById("compPrice").innerHTML =
-      "stock price: " + price + "$";
+      "stock price: " + price + " $ ";
     if (price < 0) {
       document.getElementById("compPrice").style.color = "#A62B1F";
     } else {

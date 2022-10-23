@@ -40,7 +40,7 @@ async function getSearchData(url) {
         symbol +
         ") </span> <span style='font-size: 10px; color: green'>" +
         companyInfo.profile.changesPercentage +
-        "</span>"
+        "</span>";
       searchedList.appendChild(newLi);
     }
   } catch (err) {
