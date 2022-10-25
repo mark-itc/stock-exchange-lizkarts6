@@ -1,5 +1,6 @@
 body {
   font-family: "Raleway", sans-serif;
+  background-color: whitesmoke;
 }
 
 .navbar {
@@ -9,15 +10,6 @@ body {
 
 .search-form {
   margin-left: 42vw;
-}
-
-.list-of-results {
-  margin: auto;
-  align-items: center;
-  list-style-type: none;
-  width: fit-content;
-  border-bottom: 1px solid gray;
-  padding: 15px;
 }
 
 .searched-container {
@@ -49,7 +41,7 @@ a:hover {
   justify-content: space-around;
   text-align: center;
   margin: 100px;
-  height: 100vh;
+  height: 90vh;
 }
 .company-image {
   grid-area: 1 / 1 / 2 / 2;
@@ -69,13 +61,11 @@ a:hover {
   padding: 10px;
 }
 
-
 .marquee {
-  border-bottom: 2px solid gray;
-  border-top: 2px solid gray;
+  border-bottom: 1px dotted gray;
   color: limegreen;
   height: 30px;
-  
+
   overflow: hidden;
 }
 
@@ -103,4 +93,4 @@ a:hover {
 }
 .marqDisplay:hover {
   animation-play-state: paused;
-}  
+}
